@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Doctor Communication</title>
+   <style>
+       /* CSS styles go here */
+       body {
+           font-family: Arial, sans-serif;
+           background-color: #f0f0f0;
+           margin: 0;
+           padding: 20px;
+       }
+       .container {
+           max-width: 800px;
+           margin: 0 auto;
+       }
+       .message-container {
+           background-color: #fff;
+           border-radius: 8px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           padding: 20px;
+           margin-bottom: 20px;
+           overflow: hidden;
+       }
+       .message {
+           display: flex;
+           margin-bottom: 10px;
+       }
+       .message .avatar {
+           width: 40px;
+           height: 40px;
+           border-radius: 50%;
+           margin-right: 10px;
+       }
+       .message .content {
+           flex: 1;
+           padding: 10px;
+           border-radius: 8px;
+           background-color: #f2f2f2;
+       }
+       .message .content p {
+           margin: 0;
+       }
+       .message .timestamp {
+           font-size: 12px;
+           color: #999;
+           margin-left: auto;
+       }
+       form {
+           background-color: #fff;
+           border-radius: 8px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           padding: 20px;
+           margin-top: 20px;
+           display: flex;
+           align-items: center;
+       }
+       form textarea {
+           flex: 1;
+           padding: 10px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           resize: none;
+           margin-right: 10px;
+       }
+       form button {
+           background-color: #4CAF50;
+           color: #fff;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+       form button:hover {
+           background-color: #45a049;
+       }
+   </style>
+</head>
+<body>
+   <div class="container">
+       <div class="message-container" id="messageContainer">
+           <!-- Existing messages will be displayed here -->
+       </div>
+       <form id="messageForm" onsubmit="sendMessage(); return false;">
+           <textarea id="messageInput" rows="3" placeholder="Type your message here..." required></textarea>
+           <button type="submit">Send</button>
+       </form>
+   </div>
+
+
+   <script>
+       function sendMessage() {
+           var messageInput = document.getElementById('messageInput');
+           var messageText = messageInput.value.trim();
+
+
+           if (messageText === '') {
+               return;
+           }
+
+
+           var messageContainer = document.getElementById('messageContainer');
+           var messageDiv = document.createElement('div');
+           messageDiv.classList.add('message');
+           messageDiv.innerHTML = `
+               <img class="avatar" src="patient_avatar.jpg" alt="Patient Avatar">
+               <div class="content">
+                   <p>${messageText}</p>
+                   <p class="timestamp">Sent on: ${getCurrentDateTime()}</p>
+               </div>
+           `;
+           messageContainer.appendChild(messageDiv);
+
+
+           // Clear the input field after sending the message
+           messageInput.value = '';
+       }
+
+
+       function getCurrentDateTime() {
+           var now = new Date();
+           var date = now.toDateString();
+           var time = now.toLocaleTimeString();
+           return date + ' ' + time;
+       }
+   </script>
+</body>
+</html>

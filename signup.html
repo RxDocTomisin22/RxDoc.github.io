@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sign Up</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           background-color: #f0f0f0;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+       }
+
+
+       .container {
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 8px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           text-align: center;
+       }
+
+
+       .logo {
+           margin-bottom: 20px;
+       }
+
+
+       h1 {
+           color: #333;
+           margin-bottom: 20px;
+       }
+
+
+       input[type="text"],
+       input[type="password"],
+       input[type="email"] {
+           width: 100%;
+           padding: 10px;
+           margin-bottom: 20px;
+           border: 1px solid #ccc;
+           border-radius: 4px;
+           box-sizing: border-box;
+       }
+
+
+       select {
+           width: 100%;
+           padding: 10px;
+           margin-bottom: 20px;
+           border: 1px solid #ccc;
+           border-radius: 4px;
+           box-sizing: border-box;
+       }
+
+
+       button {
+           background-color: #4CAF50;
+           color: white;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+       }
+
+
+       button:hover {
+           background-color: #45a049;
+       }
+
+
+       .login-link {
+           color: #007bff;
+           text-decoration: none;
+       }
+
+
+       .login-link:hover {
+           text-decoration: underline;
+       }
+
+
+       #successMessage {
+           display: none;
+           color: green;
+       }
+   </style>
+</head>
+<body>
+   <div class="container">
+       <img class="logo" src="https://drive.google.com/file/d/1rA47PtG8hUs3QqmWhO3UyZKg13osbbq-/view?usp=share_link" alt="Logo">
+       <h1>Sign Up</h1>
+       <form id="signupForm" onsubmit="handleSignup(event)">
+           <input type="text" id="username" name="username" placeholder="Username" required><br>
+           <input type="email" id="email" name="email" placeholder="Email" required><br>
+           <input type="password" id="password" name="password" placeholder="Password" required><br>
+           <select id="role" name="role" required>
+               <option value="patient">Patient</option>
+               <option value="doctor">Doctor</option>
+           </select><br><br>
+           <button type="submit">Sign Up</button>
+       </form>
+       <p id="successMessage">Sign up successful! Redirecting to login page...</p>
+       <p>Already have an account? <a class="login-link" href="login.html">Login here</a></p>
+   </div>
+
+
+   <script>
+       function handleSignup(event) {
+           event.preventDefault(); // Prevent form submission
+
+
+           // Get form data
+           var username = document.getElementById('username').value;
+           var email = document.getElementById('email').value;
+           var password = document.getElementById('password').value;
+           var role = document.getElementById('role').value;
+
+
+           // Perform form validation (you can add more validation as needed)
+           if (!username || !email || !password || !role) {
+               alert("Please fill in all fields");
+               return;
+           }
+
+
+           // Display success message
+           document.getElementById('signupForm').style.display = 'none';
+           document.getElementById('successMessage').style.display = 'block';
+
+
+           // Redirect to login page after 3 seconds (change 'Login.html' to your actual login page URL)
+           setTimeout(function() {
+               window.location.href = 'login.html';
+           }, 3000);
+       }
+   </script>
+</body>
+</html>
