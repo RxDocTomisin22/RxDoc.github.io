@@ -23,3 +23,9 @@ The main challenges included handling multiple APIs, debugging errors, and ensur
 Impact
 
 RXdoc.Tech aimed to bridge the gap in medication information accessibility and empower users to take control of their health decisions.
+
+
+
+
+
+if you wish to work on this your-self or want any info messeage anyone on the project
