@@ -1,85 +1,120 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Patient Dashboard</title>
-   <div align="center">
    <style>
-       /* CSS styles go here */
+       /* General Styling */
        body {
            font-family: Arial, sans-serif;
            background-color: #f0f0f0;
            margin: 0;
            padding: 0;
-       }
-       nav {
-           background-color: #333;
-           color: #fff;
-           padding: 10px;
            text-align: center;
        }
-       nav a {
-           color: #fff;
-           text-decoration: none;
-           margin: 0 10px;
+
+       /* Header */
+       header {
+           padding: 20px;
+           background-color: #4CAF50;
+           color: white;
+           font-size: 18px;
        }
+
+       /* Navigation */
+       nav {
+           background-color: #333;
+           padding: 10px;
+       }
+       nav a {
+           color: white;
+           text-decoration: none;
+           margin: 0 15px;
+           font-size: 16px;
+       }
+
+       /* Main Container */
        .container {
-           margin: 20px;
            display: flex;
            flex-wrap: wrap;
            justify-content: center;
+           gap: 20px;
+           margin-top: 20px;
        }
+
+       /* Square Buttons */
        .square {
-           width: 1000px;
-           height: 150px;
-           background-color: #fff;
-           border: 1px solid #ccc;
+           width: 250px;
+           height: 180px;
+           background-color: white;
            border-radius: 8px;
-           margin: 10px;
            display: flex;
            flex-direction: column;
-           justify-content: center;
            align-items: center;
-           text-align: center;
-           transition: all 0.3s ease;
+           justify-content: center;
+           text-decoration: none;
+           color: black;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+           transition: transform 0.3s, box-shadow 0.3s;
        }
        .square:hover {
            transform: scale(1.05);
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
        }
+       
+       /* Images in Squares */
        .square img {
-           width: 80px;
-           height: 80px;
+           width: 60px;
+           height: 60px;
            margin-bottom: 10px;
        }
    </style>
-   </style>
 </head>
 <body>
+
    <header>
        <h1>Welcome!</h1>
        <p>Stay positive and take care of your health. Every step counts!</p>
    </header>
 
+   <nav>
+       <a href="medicineinfo.html">Medicine Info</a>
+       <a href="symptomtracker.html">Symptom Tracker</a>
+       <a href="messages.html">Messages</a>
+       <a href="settings.html">Settings</a>
+   </nav>
 
    <div class="container">
-      
        <a href="medicineinfo.html" class="square">
-           <img src="https://i.pinimg.com/originals/f4/47/68/f447682369fb3bfb813a1c004fb27edd.png" alt="Medicine Information">
+           <img src="https://i.pinimg.com/originals/f4/47/68/f447682369fb3bfb813a1c004fb27edd.png" alt="Medicine Info">
            <p>Medicine Information</p>
        </a>
-   </div>
+
        <a href="symptomtracker.html" class="square">
            <img src="https://charlottefrates.github.io/symptom_checker/images/fast.png" alt="Symptom Tracker">
            <p>Symptom Tracker</p>
        </a>
-   </div>
-   <div id="reminders" class="square">
+
+       <div class="square">
            <img src="https://cdn-icons-png.freepik.com/512/7225/7225837.png" alt="Reminders">
            <p>Reminders</p>
+       </div>
+
+       <a href="messages.html" class="square">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Messages_logo.png" alt="Messages">
+           <p>Messages</p>
+       </a>
+
+       <a href="settings.html" class="square">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Windows_Settings_icon.svg" alt="Settings">
+           <p>Settings</p>
+       </a>
    </div>
-   </div>
+
+</body>
+</html>
+
        <a href="messages.html" class="square">
            <img src="https://www.google.com/imgres?q=MESSAGES%20LOGO&imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-clipart%2F20200224%2Foriginal%2Fpngtree-message-icon-for-your-project-png-image_5214044.jpg&imgrefurl=https%3A%2F%2Fpngtree.com%2Fso%2Fmessage-icon&docid=WwPPj4we3bnEKM&tbnid=xf5QUwwjjSMVrM&vet=12ahUKEwiosqLD2a-FAxWVEGIAHUtVCx0QM3oECF8QAA..i&w=1200&h=1200&hcb=2&ved=2ahUKEwiosqLD2a-FAxWVEGIAHUtVCx0QM3oECF8QAA" alt="Messages">
            <p>Messages</p>
