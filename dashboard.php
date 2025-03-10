@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,11 @@
     <header text>
     <div id="header">
         <h1><span class="RXlit">RX</span>Doc Login</h1>
-        <p id="time"></p>
-        <script>
+        <p id="time" aria-readonly=""></p>
+    <div>
+        
+    </div>
+    <script>
         function updateTime() {
             var now = new Date();
             var timeString = now.toLocaleTimeString();
